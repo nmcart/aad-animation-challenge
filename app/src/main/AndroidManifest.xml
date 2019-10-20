@@ -9,17 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Meditate"></activity>
-        <activity android:name=".InputFeels" />
-        <activity android:name=".MeditationList" />
-        <activity android:name=".ThemeSelection">
+        <activity android:name=".Meditate"
+            android:configChanges="uiMode" ></activity>
+        <activity android:name=".InputFeels"
+            android:configChanges="uiMode" />
+        <activity android:name=".MeditationList"
+            android:configChanges="uiMode" />
+        <activity android:name=".ThemeSelection"
+            android:configChanges="uiMode" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="uiMode" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
