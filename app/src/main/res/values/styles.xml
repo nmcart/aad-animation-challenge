@@ -7,15 +7,22 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="Dark" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorPrimary">#6C3EA0</item>
-        <item name="colorPrimaryDark">#3B206D</item>
-        <item name="colorAccent">#7A8992</item>
-    </style>
-    <style name="Light" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <style name="Light" parent="Theme.AppCompat.DayNight">
         <item name="colorPrimary">#CFA9FF</item>
         <item name="colorPrimaryDark">#735AFF</item>
         <item name="colorAccent">#ABCEFF</item>
+
     </style>
+
+    <style name="Dark" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">#6C3EA0</item>
+        <item name="colorPrimaryDark">#D83B2270</item>
+        <item name="colorAccent">#7A8992</item>
+        <item name="android:background">#36373A</item>
+        <item name="android:textColor">#FFFFFF</item>
+
+    </style>
+
 
 </resources>

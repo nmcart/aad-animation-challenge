@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThemeSelection">
+    tools:context=".ThemeSelectionActivity">
 
     <Button
         android:id="@+id/btn_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:text="Dark"
+        android:background="@drawable/ripple_effect"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="ChangeTheme"/>
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:onClick="onClick"
+        android:text="Light"
+        android:background="@drawable/ripple_effect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        android:onClick="ChangeTheme"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

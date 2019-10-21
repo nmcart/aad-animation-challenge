@@ -4,37 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputFeels">
+    tools:context=".InputFeelsActivity">
 
     <ImageView
-        android:id="@+id/imgv1"
-        android:layout_width="116dp"
-        android:layout_height="288dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/img_calm"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgv2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@drawable/img_calming" />
 
     <ImageView
-        android:id="@+id/imgv3"
-        android:layout_width="116dp"
-        android:layout_height="288dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/img_boost"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_boosting" />
+
+    <ImageView
+        android:id="@+id/img_rest"
+        android:layout_width="110dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClick"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimaryDark" />
+        app:srcCompat="@drawable/img_restful" />
 
-    <ImageView
-        android:id="@+id/imgv2"
-        android:layout_width="116dp"
-        android:layout_height="288dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgv3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimary" />
 </androidx.constraintlayout.widget.ConstraintLayout>
