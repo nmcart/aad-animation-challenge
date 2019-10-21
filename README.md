@@ -2,7 +2,6 @@
 
 ## Android Animation Challenge
 
-**Description**
 A Meditation application showcasing animations for different scenarios.
 
 It features:
