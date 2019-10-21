@@ -38,14 +38,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/ic_meditate" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="@+id/img_meditate"
+        app:layout_constraintStart_toStartOf="@+id/img_meditate"
+        app:layout_constraintTop_toBottomOf="@+id/img_meditate" />
+
+    <ImageButton
+        android:id="@+id/img_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/img_pause"
+        app:layout_constraintTop_toTopOf="@+id/img_pause"
+        app:srcCompat="@drawable/ic_start"
+        android:onClick="onClick"/>
+
+    <ImageButton
+        android:id="@+id/img_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/chronometer"
+        app:layout_constraintStart_toStartOf="@+id/chronometer"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer"
+        app:srcCompat="@drawable/ic_pause"
+        android:onClick="onClick"/>
+
+    <ImageButton
+        android:id="@+id/img_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/img_pause"
+        app:layout_constraintTop_toTopOf="@+id/img_pause"
+        app:srcCompat="@drawable/ic_reset"
+        android:onClick="onClick"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
