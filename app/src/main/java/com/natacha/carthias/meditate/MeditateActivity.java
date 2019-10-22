@@ -89,7 +89,10 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_select:
-                startActivity(new Intent(this, MeditationListActivity.class));
+                startActivity(new Intent (this, MeditationListActivity.class));
+
+                // MeditationList Slide Transition Animation
+                overridePendingTransition(R.anim.slide_in, R.anim.nothing);
                 break;
         }
         return super.onOptionsItemSelected(item);

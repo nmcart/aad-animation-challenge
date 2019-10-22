@@ -75,6 +75,9 @@ public class InputFeelsActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.menu_select:
                 startActivity(new Intent (this, MeditationListActivity.class));
+                
+                // MeditationList Slide Transition Animation
+                overridePendingTransition(R.anim.slide_in, R.anim.nothing);
                 break;
         }
         return super.onOptionsItemSelected(item);
