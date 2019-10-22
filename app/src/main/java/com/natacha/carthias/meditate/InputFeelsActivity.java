@@ -159,5 +159,12 @@ public class InputFeelsActivity extends AppCompatActivity implements View.OnClic
 
         }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent (this, InputFeelsActivity.class));
+
+        //Activity refresh Fade Transition
+        overridePendingTransition(R.anim.fade_out,  R.anim.fade_in);
     }
+}
 

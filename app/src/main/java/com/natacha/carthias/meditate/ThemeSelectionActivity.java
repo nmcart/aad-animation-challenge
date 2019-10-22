@@ -82,7 +82,10 @@ public class ThemeSelectionActivity extends AppCompatActivity implements View.On
             }
         }
 
-
-        }
+    @Override
+    public void onBackPressed() {
+        System.exit(1);
+    }
+}
 
 

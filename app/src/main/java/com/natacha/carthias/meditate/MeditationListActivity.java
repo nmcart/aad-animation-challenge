@@ -92,4 +92,13 @@ public class MeditationListActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        startActivity(new Intent (this, InputFeelsActivity.class));
+
+        //Activity Change Slide Transition
+        overridePendingTransition(R.anim.slide_in,R.anim.slide_out_right);
+    }
 }
