@@ -9,3 +9,5 @@ It features:
 - Multiple meditations for different moods
 - A Day/Night mode
  
+ ## Contributors
+ Nmcarthias
