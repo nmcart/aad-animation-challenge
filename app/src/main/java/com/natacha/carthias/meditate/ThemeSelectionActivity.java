@@ -55,7 +55,12 @@ public class ThemeSelectionActivity extends AppCompatActivity implements View.On
                     ObjectAnimator.ofObject(view, "backgroundColor", new ArgbEvaluator(), colourFrom, colourTo)
                             .setDuration(duration)
                             .start();
+
                     ThemeUtils.changeToTheme(this, ThemeUtils.LIGHT);
+
+                    // ThemeSelection Transition Animation
+                    overridePendingTransition(R.anim.fade_out,R.anim.fade_in);
+
                     startActivity(new Intent (ThemeSelectionActivity.this, InputFeelsActivity.class));
                     break;
                 case R.id.btn_dark:
@@ -66,7 +71,12 @@ public class ThemeSelectionActivity extends AppCompatActivity implements View.On
                     ObjectAnimator.ofObject(view, "backgroundColor", new ArgbEvaluator(), colourFrom, colourTo)
                             .setDuration(duration)
                             .start();
+
                     ThemeUtils.changeToTheme(this, ThemeUtils.DARK);
+
+                    // ThemeSelection Transition Animation
+                    overridePendingTransition(R.anim.fade_out,R.anim.fade_in);
+
                     startActivity(new Intent (ThemeSelectionActivity.this, InputFeelsActivity.class));
                     break;
             }
