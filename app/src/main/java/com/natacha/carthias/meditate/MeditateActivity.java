@@ -3,6 +3,7 @@ package com.natacha.carthias.meditate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Animatable2;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +34,7 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
     long mTimeLeftInMillis = START_TIME;
     Handler mMainHandler;
     Runnable runnable;
+    ViewGroup sceneRoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
         imgViewMeditate = findViewById(R.id.img_meditate);
         TextView tvMeditation = findViewById(R.id.tv_meditate);
         chronometer = findViewById(R.id.chronometer);
+        sceneRoot = (ViewGroup) findViewById(R.id.sceneRoot);
 
         // Retrieve which meditation was passed with intent
         Intent intent = getIntent();
@@ -59,7 +63,11 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
         // Meditate Transition Animation
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-
+        // Meditate Transition Animation for Banner
+        ObjectAnimator translateAnimation =
+                ObjectAnimator.ofFloat(imgViewBanner, "translationX", 1500, 0f);
+        translateAnimation.setDuration(1000);
+        translateAnimation.start();
     }
 
     // Create menu
