@@ -56,6 +56,9 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
         imgViewBanner.setImageResource(imgUrl);
         tvMeditation.setText(txtMeditation);
 
+        // Meditate Transition Animation
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
 
     }
 

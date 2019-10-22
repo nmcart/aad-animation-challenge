@@ -51,10 +51,6 @@ public class InputFeelsActivity extends AppCompatActivity implements View.OnClic
 
         scene1.enter();
         currentScene = scene1;
-
-
-
-
     }
 
     // Create menu
