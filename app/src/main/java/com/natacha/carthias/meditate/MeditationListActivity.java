@@ -76,10 +76,18 @@ public class MeditationListActivity extends AppCompatActivity {
             case R.id.menu_day:
                 ThemeUtils.changeToTheme(this, ThemeUtils.LIGHT);
                 startActivity(new Intent(this, this.getClass()));
+
+                //Theme Change Fade Transition
+                overridePendingTransition(R.anim.fade_out,  R.anim.fade_in);
+
                 break;
             case R.id.menu_night:
                 ThemeUtils.changeToTheme(this, ThemeUtils.DARK);
                 startActivity(new Intent (this, this.getClass()));
+
+                //Theme Change Fade Transition
+                overridePendingTransition(R.anim.fade_out,  R.anim.fade_in);
+
                 break;
         }
         return super.onOptionsItemSelected(item);

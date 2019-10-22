@@ -68,14 +68,22 @@ public class InputFeelsActivity extends AppCompatActivity implements View.OnClic
             case R.id.menu_day:
                 ThemeUtils.changeToTheme(this, ThemeUtils.LIGHT);
                 startActivity(new Intent (this, this.getClass()));
+
+                //Theme Change Fade Transition
+                overridePendingTransition(R.anim.fade_out,  R.anim.fade_in);
+
                 break;
             case R.id.menu_night:
                 ThemeUtils.changeToTheme(this, ThemeUtils.DARK);
                 startActivity(new Intent (this, this.getClass()));
+
+                //Theme Change Fade Transition
+                overridePendingTransition(R.anim.fade_out,  R.anim.fade_in);
+
                 break;
             case R.id.menu_select:
                 startActivity(new Intent (this, MeditationListActivity.class));
-                
+
                 // MeditationList Slide Transition Animation
                 overridePendingTransition(R.anim.slide_in, R.anim.nothing);
                 break;
