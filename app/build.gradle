@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     defaultConfig {
+        vectorDrawables.useSupportLibrary  true
         applicationId "com.natacha.carthias.meditate"
         minSdkVersion 27
         targetSdkVersion 29

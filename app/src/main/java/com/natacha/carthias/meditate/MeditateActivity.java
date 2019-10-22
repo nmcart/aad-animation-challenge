@@ -4,8 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Animatable2;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,14 +23,15 @@ import java.util.Locale;
 
 public class MeditateActivity extends AppCompatActivity implements View.OnClickListener {
     // Variables
-    Meditation meditation;
+    ImageView imgViewMeditate;
     private int imgUrl;
     private String txtMeditation;
     private static final long START_TIME = 600000; // 10 minutes
     TextView chronometer;
     CountDownTimer mCountDownTimer;
-    boolean mTimeRunning;
     long mTimeLeftInMillis = START_TIME;
+    Handler mMainHandler;
+    Runnable runnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +43,9 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
 
         // Reference to components in XML
         ImageView imgViewBanner = findViewById(R.id.img_meditateBanner);
+        imgViewMeditate = findViewById(R.id.img_meditate);
         TextView tvMeditation = findViewById(R.id.tv_meditate);
         chronometer = findViewById(R.id.chronometer);
-
-
 
         // Retrieve which meditation was passed with intent
         Intent intent = getIntent();
@@ -49,6 +55,7 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
         // Set Image and Meditation
         imgViewBanner.setImageResource(imgUrl);
         tvMeditation.setText(txtMeditation);
+
 
     }
 
@@ -105,22 +112,58 @@ public class MeditateActivity extends AppCompatActivity implements View.OnClickL
 
          @Override
          public void onFinish() {
-             mTimeRunning = false;
+
          }
      }.start();
 
-     mTimeRunning = true;
+
+     //Animate Meditation Cloud
+     imgViewMeditate.setImageResource(R.drawable.avd_cloud);
+     Drawable drawable = imgViewMeditate.getDrawable();
+     if (drawable instanceof Animatable) {
+
+         final AnimatedVectorDrawable avd = (AnimatedVectorDrawable) drawable;
+         avd.start();
+
+         // Loop Animation
+         mMainHandler = new Handler(Looper.getMainLooper());
+         avd.registerAnimationCallback(new Animatable2.AnimationCallback() {
+             @Override
+             public void onAnimationEnd(Drawable drawable) {
+                 runnable = new Runnable() {
+                     @Override
+                     public void run() {
+
+                         avd.start();
+                     }
+                 };
+                 mMainHandler.post(runnable);
+             }
+
+         });
+     }
+
  }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
-        mTimeRunning = false;
+
+        // Stop Meditation Cloud Animation
+        imgViewMeditate.setImageResource(R.drawable.ic_meditate);
+
     }
+
+
 
     private void resetTimer() {
         mTimeLeftInMillis = START_TIME;
         mCountDownTimer.cancel();
+        mCountDownTimer.start();
+        mCountDownTimer.cancel();
         updateCountDown();
+
+        // Stop Meditation Cloud Animation
+        imgViewMeditate.setImageResource(R.drawable.ic_meditate);
     }
 
     private void updateCountDown() {
